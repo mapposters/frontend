@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     // Project settings
     frontend: {
       // configurable paths
-      app:  'frontend',
+      app:  'app',
       dist: 'dist'
     },
 
