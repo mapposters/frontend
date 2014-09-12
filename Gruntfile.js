@@ -75,11 +75,8 @@ module.exports = function(grunt) {
     sass:{
       dist: {
         files: [{
-          expand: true,
-          cwd: '<%= frontend.app %>/styles',
-          src: ['*.scss'],
-          dest: '<%= frontend.dist %>/public',
-          ext: '.css'
+          src: '<%= frontend.app %>/styles/main.scss',
+          dest: '<%= frontend.dist %>/public/css/mapposter.css',
         }]
       }
     },
@@ -100,21 +97,21 @@ module.exports = function(grunt) {
     },
     watch: {
       scripts: {
-        files: 'frontend/scripts/**/*.js',
+        files: '<%= frontend.app %>/scripts/**/*.js',
         tasks: ['jshint', 'concat', 'uglify'],
         options: {
           livereload: true,
         },
       },
       styles: {
-        files: 'frontend/styles/**/*.scss',
+        files: '<%= frontend.app %>/styles/**/*.scss',
         tasks: ['sass'],
         options: {
           livereload: true,
         },
       },
       html: {
-        files: 'frontend/**/*.html',
+        files: '<%= frontend.app %>/**/*.html',
         tasks: ['htmlmin'],
         options: {
           livereload: true,

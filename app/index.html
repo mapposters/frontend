@@ -6,19 +6,21 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Frontend</title>
+    <title>MapPosters</title>
     <link rel="shortcut icon" href="/img/favicon.png" />
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <meta name="author" content="DevVex">
+    <meta name="author" content="dborzov & DevVex">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
 
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" >
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.0/mapbox.css' rel='stylesheet' />
+    <link href='public/css/mapposter.css' rel='stylesheet' />
 
 </head>
-  <body ng-app="frontendApp">
+  <body ng-app="mapPostersApp">
 
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -48,6 +50,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="public/frontend.min.js"></script>
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.0/mapbox.js'></script>
 
 </body>
 </html>

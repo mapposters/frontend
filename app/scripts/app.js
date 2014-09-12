@@ -1,4 +1,4 @@
-var app = angular.module('frontendApp', ['ngRoute'])
+var app = angular.module('mapPostersApp', ['ngRoute'])
 .config(['$routeProvider', function ($routeProvider) {
   $routeProvider
     .when('/', {
