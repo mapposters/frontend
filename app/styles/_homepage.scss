@@ -3,15 +3,17 @@
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: url(../images/home_image.jpg) no-repeat center center;
+    background: url(../images/map_bg.jpg) no-repeat center center;
     background-size: cover;
+    height: 300px;
 
 
 
     .intro-message {
         position: relative;
-        padding-top: 20%;
-        padding-bottom: 20%;
+        top: -20px;
+        // padding-top: 20%;
+        // padding-bottom: 20%;
 
         h1 {
             margin: 0;

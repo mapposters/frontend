@@ -17,8 +17,8 @@ module.exports = function(grunt) {
           dot: true,
           src: [
             '.tmp',
-            '<%= frontend.dist %>/*',
-            '!<%= frontend.dist %>/.git*'
+            '<%=frontend.dist%>/*',
+            '!<%=frontend.dist%>/.git*'
           ]
         }]
       }
@@ -72,6 +72,16 @@ module.exports = function(grunt) {
         }]
       }
     },
+    imagemin: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= frontend.app %>/static',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: '<%= frontend.dist %>/public/'
+        }]
+      }
+    },
     sass:{
       dist: {
         files: [{
@@ -119,19 +129,21 @@ module.exports = function(grunt) {
       },
     }
   });
-  
+
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  // grunt.loadNpmTasks('grunt-contrib-qunit');
+  //grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
 
   grunt.registerTask('test', ['jshint', 'qunit']);
-  grunt.registerTask('build', ['clean','jshint', 'concat', 'uglify', 'htmlmin', 'sass', 'copy']);
-  grunt.registerTask('default', ['clean', 'jshint', 'concat', 'uglify','htmlmin', 'sass', 'copy', 'watch']);
+  grunt.registerTask('production', ['clean', 'jshint', 'concat', 'uglify', 'htmlmin', 'imagemin', 'sass', 'copy']);
+  grunt.registerTask('develop', ['clean', 'jshint', 'concat','htmlmin', 'imagemin', 'sass', 'copy']);
+  grunt.registerTask('default', ['develop', 'watch']);
 
 };
