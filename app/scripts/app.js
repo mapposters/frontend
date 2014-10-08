@@ -4,7 +4,7 @@ var app = angular.module('mapPostersApp', ['ngRoute'])
       .when('/', {
         templateUrl: 'views/homepage.html'
       })
-      .when('/map:id', {
+      .when('/map/:id', {
         templateUrl: 'views/map.html'
       })
       .otherwise({
